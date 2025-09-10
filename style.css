@@ -1,3 +1,4 @@
+
 body {
   font-family: Arial, sans-serif;
   padding: 20px;
@@ -30,4 +31,72 @@ button {
 .error {
   color: red;
   font-size: 0.9em;
+
+/* General styling */
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background: #f5f5f5;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+/* 
+    CSS Animations*/
+
+/* Button hover effect with transition */
+.hover-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  background: #6200ea;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.hover-btn:hover {
+  background: #3700b3;
+  transform: scale(1.1);
+}
+
+/* Continuous animation */
+.animated-box {
+  width: 100px;
+  height: 100px;
+  margin: 20px auto;
+  background: coral;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-40px); }
+}
+
+/* 
+    JS + CSS*/
+
+
+
+.js-box {
+  width: 100px;
+  height: 100px;
+  margin: 20px auto;
+  background: teal;
+}
+
+/* Animation triggered by JS */
+.js-box.animate {
+  animation: spin 1.5s linear forwards;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+
+}
 }

@@ -1,3 +1,4 @@
+
 //Event Handling
 const messageBtn = document.getElementById("messageBtn");
 const message = document.getElementById("message");
@@ -83,4 +84,49 @@ form.addEventListener("submit", (e) => {
       " Form submitted successfully!";
     form.reset();
   }
+
+// Part 2: Functions with Parameters
+
+
+// A reusable function with parameters & return value
+function calculateArea(width, height) {
+  return width * height;
+}
+
+// Demonstrating local vs global scope
+const globalMessage = "I am global!";
+
+function scopeExample() {
+  let localMessage = "I am local!";
+  console.log(globalMessage); 
+  console.log(localMessage);  
+}
+
+scopeExample(); 
+// console.log(localMessage); 
+
+// Using function when button clicked
+document.getElementById("calcBtn").addEventListener("click", () => {
+  const result = calculateArea(5, 3);
+  document.getElementById("calcResult").textContent = 
+    `Area: ${result}`;
+});
+
+
+// Part 3: JS Triggering CSS Animations
+
+const jsBox = document.getElementById("jsBox");
+const animateBtn = document.getElementById("animateBtn");
+
+function triggerAnimation(element, className) {
+  // Remove class if already applied to restart animation
+  element.classList.remove(className);
+  void element.offsetWidth; // Trick to reflow DOM
+  element.classList.add(className);
+}
+
+animateBtn.addEventListener("click", () => {
+  triggerAnimation(jsBox, "animate");
+
+});
 });
